@@ -1,6 +1,6 @@
 <?php
 if (!isset($_COOKIE['selqty'])) {
-    header("Location: shop.html"); // If selqty cookie is not set, redirect back to shop.html
+    header("Location: shop.html"); 
     exit();
 }
 ?>

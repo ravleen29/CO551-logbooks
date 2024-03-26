@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_COOKIE['selqty'])) {
-    $quantity = $_COOKIE['selqty']; // Retrieve quantity from cookie
-    $size = $_POST['selsize']; // Retrieve size from form submission
+    $quantity = $_COOKIE['selqty']; 
+    $size = $_POST['selsize']; 
 
-    // Calculate price based on size
+   
     switch ($size) {
         case "Small":
             $price = 15.75;
@@ -21,10 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_COOKIE['selqty'])) {
             $price = 0;
     }
 
-    // Calculate total price
     $total_price = $quantity * $price;
 } else {
-    header("Location: shop.html"); // If selqty cookie is not set, redirect back to shop.html
+    header("Location: shop.html"); 
     exit();
 }
 ?>
