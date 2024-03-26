@@ -20,7 +20,7 @@ if (!isset($_COOKIE['selqty'])) {
       <option value="blue">blue</option>
     </select>
     <br/><br/>  
-    <input type="hidden" name="selsize" value="<?php echo $_POST['selsize']; ?>"> <!-- Add hidden field to pass 'selsize' -->
+    <input type='cookie' name="selsize" value="<?php echo $_POST['selsize']; ?>">
     <input type='submit' value='Buy'/>
   </form>
 </body>

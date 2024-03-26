@@ -1,14 +1,18 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['selqty'])) {
-    $selqty = $_POST['selqty']; // Store quantity in a variable
-
-    // Set the cookie for selqty
-    setcookie('selqty', $selqty, time() + (86400 * 30), "/"); // 86400 = 1 day
-
-    header("Location: selectcolour.php"); // Redirect to selectcolour.php
-    exit();
-} else {
-    header("Location: shop.html"); // If selqty is not set, redirect back to shop.html
-    exit();
-}
-?>
+<html>
+<head>
+  <title>Select Size Page</title>
+</head>
+<body>
+  <form action="selectcolour.php" method="POST">
+    Select the size for the <?php echo $_POST['selqty']; ?> widgets you are ordering
+    <select name="selsize">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="ExtraLarge">Extra Large</option>
+    </select>
+    <br/><br/>  
+    <input type="submit" value="Next"/>
+  </form>
+</body>
+</html>
